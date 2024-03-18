@@ -16,7 +16,7 @@
 
     $ cd create
     $ conan new pugixml/1.11
-    $ create . user/testing
+    $ conan create . user/testing
     $ conan search pugixml/1.11@user/testing
     $ conan create . user/testing -s build_type=Debug
     $ conan search pugixml/1.11@user/testing
