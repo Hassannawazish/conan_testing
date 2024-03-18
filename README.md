@@ -7,6 +7,10 @@
 
     Make sure all versions are correct. You can use Anaconda and create a conda environment for your ease.
 
+    Initially a conanfile.txt is used to create the conan package of any 3rd party repository, just need to setup conanfile functions according to build type, os type, packeges files names and versions like here we did for pugixml 1.11. For more clarity or in case of errors you can see the CMakelists.txt code for the library you want to package like pugixml in this case.
+
+    Only conanfile.py is required for creation. Need to other files to keep the things simple.  
+
 ## Creation of Conan Package
     local Creation
 
@@ -27,3 +31,9 @@
     $ conan search pugixml/1.11@user/testing -r=artifactory                  (After this conan have only uploaded the package recipe for pugixml)
     $ conan upload "pugixml*" -r artifactory --all --confirm
     $ conan search "*" -r=artifactory
+
+    By using these commands you will generate the package and upload is to repository and check the remote existance by searching commands as provided above. 
+
+
+## Consumption of Conan Package
+    
