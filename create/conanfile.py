@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class PugixmlConan(ConanFile):
     name = "pugixml"
-    version = "1.11"
+    version = "1.14"
     license = "<Put the package license here>"
     author = "<Put your name here> <And your email here>"
     url = "<Package recipe repository url here, for issues about the package>"
@@ -23,8 +23,8 @@ class PugixmlConan(ConanFile):
         # This small hack might be useful to guarantee proper /MT /MD linkage
         # in MSVC if the packaged project doesn't have variables to set it
         # properly
-        tools.replace_in_file("pugixml/CMakeLists.txt", "project(pugixml VERSION 1.11 LANGUAGES CXX)",
-                              '''project(pugixml VERSION 1.11 LANGUAGES CXX)
+        tools.replace_in_file("pugixml/CMakeLists.txt", "project(pugixml VERSION 1.14 LANGUAGES CXX)",
+                              '''project(pugixml VERSION 1.14 LANGUAGES CXX)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()''')
 

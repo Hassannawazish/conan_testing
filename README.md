@@ -7,7 +7,7 @@
 
     Make sure all versions are correct. You can use Anaconda and create a conda environment for your ease.
 
-    Initially a conanfile.txt is used to create the conan package of any 3rd party repository, just need to setup conanfile functions according to build type, os type, packeges files names and versions like here we did for pugixml 1.11. For more clarity or in case of errors you can see the CMakelists.txt code for the library you want to package like pugixml in this case.
+    Initially a conanfile.txt is used to create the conan package of any 3rd party repository, just need to setup conanfile functions according to build type, os type, packeges files names and versions like here we did for pugixml 1.14. For more clarity or in case of errors you can see the CMakelists.txt code for the library you want to package like pugixml in this case.
 
     Only conanfile.py is required for creation. Need to other files to keep the things simple.  
 
@@ -15,11 +15,12 @@
     local Creation
 
     $ cd create
-    $ conan new pugixml/1.11
+    $ conan new pugixml/1.14                             (this command will create a template conanfile.txt you have to replace it with the file     
+                                                        provided by me and you can compare both files to see the contents I have added to create package for 3rd party library) (it can replace the file is already exists to take care)
     $ conan create . user/testing
-    $ conan search pugixml/1.11@user/testing
+    $ conan search pugixml/1.14@user/testing
     $ conan create . user/testing -s build_type=Debug
-    $ conan search pugixml/1.11@user/testing
+    $ conan search pugixml/1.14@user/testing
 
     Setup Remote repository on jfrog Artifacts / Nexus to upload the conan package/recipe of pugixml onto the cloud.
     Create an account on jfrog(can be free trail). Create a repository by selecting conan package and copy the repository link.(should be like https://hassannaw.jfrog.io/artifactory/api/conan/myconanrepo ) 
@@ -28,7 +29,7 @@
     $ conan remote list
     $ conan upload "pugixml*" -r artifactory
     $ conan search "*" -r=artifactory
-    $ conan search pugixml/1.11@user/testing -r=artifactory                  (After this conan have only uploaded the package recipe for pugixml)
+    $ conan search pugixml/1.14@user/testing -r=artifactory                  (After this conan have only uploaded the package recipe for pugixml)
     $ conan upload "pugixml*" -r artifactory --all --confirm
     $ conan search "*" -r=artifactory
 
