@@ -27,6 +27,7 @@
 
     $ conan remote add artifactory https://hassannaw.jfrog.io/artifactory/api/conan/myconanrepo
     $ conan remote list
+        (have to replace artifactory name here by your artifactory)
     $ conan upload "pugixml*" -r artifactory
     $ conan search "*" -r=artifactory
     $ conan search pugixml/1.14@user/testing -r=artifactory                  (After this conan have only uploaded the package recipe for pugixml)
