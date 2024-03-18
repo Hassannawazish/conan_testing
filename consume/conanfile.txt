@@ -1,0 +1,8 @@
+[requires]
+pugixml/1.14@user/testing
+
+[generators]
+cmake
+
+[options]
+pugixml:shared=False

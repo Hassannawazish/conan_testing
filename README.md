@@ -38,4 +38,15 @@
 
 
 ## Consumption of Conan Package
-    
+
+    For consumption of conan package named as pugixml/1.14@user/testing first of all conanfile.txt is required.
+    we can use and run in c++ code by using the following commands.
+
+    $   cd consume/
+    $   conan install .. -r=pugixml-hassan-conan
+    $   cmake .. -DCMAKE_BUILD_TYPE=Release
+    $   make -j4
+    $   cd bin/
+    $   ./xml_reader
+
+    It will run the executable which it utilizing the conan package.
